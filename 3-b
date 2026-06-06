@@ -1,0 +1,59 @@
+Program– 03: Warehouse Revenue Calculation OR Branch revenue calculator
+
+Algorithm:
+Step 1: Start
+Step 2: Input numberof branches (branches).
+Step 3: Inputnumberof products (products).
+Step 4: Declareunits[branches][products] and revenue[products].
+Step 5: Inputunits shipped for each branch and product.
+Step 6: Input revenue per unit for each product.
+Step 7: Foreachbranch i:
+    o Initialize total = 0.
+    o Foreachproduct j:
+        Computetotal += units[i][j] * revenue[j].
+    o Printtotal revenue for branch i.
+Step 8: Stop
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int branches, products, i, j;
+    int units[100][100]; // now branches & products are known
+    int revenue[100];
+    clrscr();
+    printf("Enter number of branches: ");
+    scanf("%d", &branches);
+    printf("Enter number of products: ");
+    scanf("%d", &products);
+    printf("\nEnter number of units shipped by each branch for each product:\n");
+    for(i = 0; i < branches; i++)
+    {
+        printf("Branch %d:\n", i+1);
+        for(j = 0; j < products; j++)
+        {
+            printf(" Product %d units: ", j+1);
+            scanf("%d", &units[i][j]);
+        }
+    }
+    // Input revenue per product
+    printf("\nEnter revenue per unit for each product:\n");
+    for(j = 0; j < products; j++)
+    {
+        printf("Product %d revenue: ", j+1);
+        scanf("%d", &revenue[j]);
+    }
+    printf("Total revenue per branch:\n");
+    for (i = 0; i < branches; i++)
+    {
+        int total = 0;
+        for (j = 0; j < products; j++)
+        {
+            total += units[i][j] * revenue[j];
+        }
+        printf("Branch %d: %d\n", i + 1, total);
+    }
+    getch();
+    return 0;
+}
