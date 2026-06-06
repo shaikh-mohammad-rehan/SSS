@@ -1,0 +1,43 @@
+Program– 07: Student PASS/FAIL checker with average
+
+Algorithm:
+Step 1: [Start]
+Step 2: Input marks for three subjects: mark1, mark2, mark3
+Step 3: Calculate the average:
+    average = (mark1 + mark2 + mark3) /3.0
+Step 4: Call a function isPassed(mark1, mark2, mark3) that returns:
+     1ifall marks ≥ 40
+     0otherwise
+Step 5: Display the average
+Step 6: If return value is 1 → Print “Passed”
+Step 7: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+int isPassed(int m1, int m2, int m3)
+{
+    if (m1 >=40&&m2>=40&&m3>=40)
+        return 1;
+    else
+        return 0;
+}
+void main()
+{
+    int subject1, subject2, subject3;
+    float average;
+    clrscr();
+    printf("Enter marks for Subject 1: ");
+    scanf("%d", &subject1);
+    printf("Enter marks for Subject 2: ");
+    scanf("%d", &subject2);
+    printf("Enter marks for Subject 3: ");
+    scanf("%d", &subject3);
+    average = (subject1 + subject2 + subject3) / 3.0;
+    printf("Average Marks: %.2f\n", average);
+    if (isPassed(subject1, subject2, subject3))
+        printf("Result: PASS\n");
+    else
+        printf("Result: FAIL\n");
+    getch();
+}
