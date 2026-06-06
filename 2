@@ -1,0 +1,39 @@
+Program– 02:Student grade calculator
+
+Algorithm:
+Step 1: [Start]
+Step 2: [Input the student's marks]
+Read Marks
+Step 3: [Use if-else if statements to determine the grade:]
+ If marks ≥ 90 → Grade A
+ Else if marks ≥ 75 → Grade B
+ Else if marks ≥ 60 → Grade C
+ Else if marks ≥ 50 → Grade D
+ Else → Grade F
+Step 4: [Display the grade]
+Print Grade
+Step 5: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+  int marks;
+  clrscr();
+  printf("Enter the student's marks (0 to 100): ");
+  scanf("%d", &marks);
+  if (marks < 0 | marks > 100)
+    printf("Invalid marks! Please enter a value between 0 and 100.\n");
+  else if (marks >= 90)
+    printf("Grade: A\n");
+  else if (marks >= 75)
+    printf("Grade: B\n");
+  else if (marks >= 60)
+    printf("Grade: C\n");
+  else if (marks >= 50)
+    printf("Grade: D\n");
+  else
+    printf("Grade: F\n");
+  getch();
+}
