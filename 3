@@ -1,0 +1,64 @@
+Program– 03: KYC ID VERIFICATION
+
+Algorithm:
+Step 1: [ Start]
+Step 2: [ Display the menu:]
+  1→PANNumber
+  2→AADHARNumber
+  3→APAARId
+  4→Driving License
+  5→Passport
+Step 3: [ Read the user’s choice.]
+  Read choice
+Step 4: [ Use a switch(choice) to process the selected ID type:]
+  Case 1 (PAN):
+    Print "PAN Verified".
+  Case 2 (AADHAR):
+    Print "AADHAR Verified".
+  Case 3 (APAAR):
+    Print "APAAR Verified".
+  Case 4 (Driving License):
+    Print "Driving License Verified".
+  Case 5 (Passport):
+    Print "Passport Verified".
+  Default: Print "Not verified".
+Step 5: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include<conio.h>
+int main()
+{
+  int choice, id;
+  clrscr();
+  printf("------ KYC Verification System-----\n");
+  printf("1. PAN Number\n");
+  printf("2. AADHAR Number\n");
+  printf("3. APAAR Id\n");
+  printf("4. Driving License\n");
+  printf("5. Passport\n");
+  printf("Enter your choice (1-5): ");
+  scanf("%d", &choice);
+  switch(choice)
+  {
+    case 1: // PAN
+      printf("PAN Verified!\n");
+      break;
+    case 2: // AADHAAR
+      printf("AADHAR Verified!\n");
+      break;
+    case 3: // APAAR
+      printf("APAAR Verified!\n");
+      break;
+    case 4: // Driving License
+      printf("Driving License Verified!\n");
+      break;
+    case 5: // Passport
+      printf("Passport Verified!\n");
+      break;
+    default:
+      printf("Not Verified!\n");
+  }
+  getch();
+  return 0;
+}
