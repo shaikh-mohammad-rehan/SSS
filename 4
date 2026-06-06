@@ -1,0 +1,86 @@
+Program– 04: Quadratic equation root finder
+
+Algorithm:
+Step1: [Start]
+Step2: [Input the coefficients a, b, and c of the quadratic equation.]
+  Read a, b, c
+Step3: [ Check for Invalid Coefficients!]
+  If a == 0 and b==0:
+    If true, print "Invalid Coefficients" and terminate the program.
+Step4: [ Check if given equation is not Quadratic equation but Linear equation]
+  else if a == 0:
+    o The equation is linear (bx + c = 0).
+    o Calculate root =-c / b.
+    o Print the linear root.
+Step5: [ Roots to find Quadratic equation ]
+  else (a ≠ 0):
+  The equation is quadratic.
+  o Calculate the discriminant: disc = b²- 4ac.
+  o if disc > 0:
+     Calculate two real and distinct roots:
+     root1 = (-b + sqrt(disc)) / (2a)
+     root2 = (-b- sqrt(disc)) / (2a)
+     Print both roots.
+  o else if disc == 0:
+     Calculate one real and repeated root:
+     root1 = root2 =-b / (2a)
+     Print the root.
+  o else (disc < 0):
+     Calculate complex roots:
+     Calculate real part, root1 =-b / (2a)
+     Calculate imag part, root2 = sqrt(-disc) / (2a)
+     Print the complex roots in the form real ± imag i.
+Step6: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+void main()
+{
+    float a, b, c,d, root1, root2;
+    clrscr();
+    printf("Enter coefficients a, b, and c: ");
+    scanf("%f %f %f", &a, &b, &c);
+    if(a == 0 && b == 0)
+    {
+        printf("Invalid Coefficients!\n");
+    }
+    else if (a == 0)
+    {
+        printf("This is not a quadratic equation but Linear Equation.\n");
+        root1 =- c / b;
+        printf("Linear Equation with root: %.2f\n", root1);
+   }
+   else
+   {
+       d =b*b-4*a*c;
+       if (d == 0)
+       {
+            printf("Roots are real and equal.\n");
+            root1 =root2 =-b / (2 * a);
+            printf("Root = %.2f\n", root1);
+       }
+       else if (d > 0)
+       {
+           printf("Roots are real and distinct.\n");
+           root1 = (-b + sqrt(d)) / (2 * a);
+           root2 = (-b- sqrt(d)) / (2 * a);
+           printf("Root 1 = %.2f\n", root1);
+           printf("Root 2 = %.2f\n", root2);
+      }
+      else
+      }
+          printf("Roots are complex and imaginary.\n");
+          root1 =-b / (2 * a);
+          root2 = sqrt(abs(d)) / (2 * a);
+          printf("Root 1 = %.2f +i %.2f\n", root1, root2);
+          printf("Root 2 = %.2lf-i %.2f\n", root1, root2);
+      }
+  }
+  getch():
+}
+       
+          
+    
+  
