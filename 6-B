@@ -1,0 +1,41 @@
+Program– 06 : Library Book Details (Structures in C) OR library book structure display
+
+Algorithm:
+Step 1:Start
+Step 2: Define structure Book with fields: title, author, year.
+Step 3: Input number of books n.
+Step 4: Declare array of structure books[n].
+Step 5: For each book: input title, author, and year.
+Step 6: For each book: display "Book i: title by author (year)".
+Step 7: Stop
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+struct Book
+{
+    char title[50];
+    char author[50];
+    int year;
+};
+int main()
+{
+    int n, i;
+    struct Book booklist[100];
+    clrscr();
+    printf("Enter number of books: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++)
+    {
+        printf("Enter title, author, and year for book %d:\n", i+1);
+        scanf("%s %s %d",booklist[i].title, booklist[i].author, & booklist[i].year);
+    }
+    printf("\nLibrary Book Details:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("Book %d: %s by%s (%d)\n", i+1, booklist[i].title, booklist[i].author,
+        booklist[i].year);
+    }
+    getch();
+    return 0;
+}
