@@ -1,0 +1,37 @@
+Program– 08: Swap Account Balances using Pointer
+
+Algorithm:
+Step 1:Start
+Step 2: Input two account balances: balance1 and balance2
+Step 3: Display balances before swapping
+Step 4: Call a function swap(&balance1, &balance2) that:
+     Usesatemporaryvariable and pointerdereferencing to swap the values
+Step 5: Displaybalances after swapping
+Step 6: Stop
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a =*b;
+    *b =temp;
+}
+void main()
+{
+    int balance1, balance2;
+    clrscr();
+    printf("Enter balance for Account 1: ");
+    scanf("%d", &balance1);
+    printf("Enter balance for Account 2: ");
+    scanf("%d", &balance2);
+    printf("\nBefore Swapping:\n");
+    printf("Account 1 Balance: %d\n", balance1);
+    printf("Account 2 Balance: %d\n", balance2);
+    swap(&balance1, &balance2);
+    printf("\nAfter Swapping:\n");
+    printf("Account 1 Balance: %d\n", balance1);
+    printf("Account 2 Balance: %d\n", balance2);
+    getch();
+}
