@@ -1,0 +1,45 @@
+Program– 02: SortingScores in DescendingOrder (BubbleSort)
+OR sort race score(descending)
+
+Algorithm:
+Step 1: [Start]
+Step 2: Inputnumberof students n.
+Step 3: Inputn scores into array scores[].
+Step 4: For i =0ton-2:
+    o Forj=0ton-i-2:
+        If scores[j] < scores[j+1], swap them.
+Step 5: Printsorted scores in descending order.
+Step 6: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    int n, i, j, temp;
+    int scores[100];
+    clrscr();
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+    printf("Enter the scores:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &scores[i]);
+    // Bubble Sort(Descending Order)
+    for(i = 0; i < n-1; i++)
+    {
+        for(j = 0; j < n-i-1; j++)
+        {
+            if(scores[j] < scores[j+1])
+            {
+                temp = scores[j];
+                scores[j] = scores[j+1];
+                scores[j+1] = temp;
+            }
+        }
+    }
+    printf("Scores in descending order:\n");
+    for(i = 0; i < n; i++)
+        printf("%d ", scores[i]);
+    getch();
+    return 0;
+}
