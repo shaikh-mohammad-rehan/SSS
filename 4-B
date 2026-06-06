@@ -1,0 +1,53 @@
+Program– 04: MobileContact Manager (ConcatenatingNames) OR full name builder(no string function)
+
+Algorithm:
+Step 1: Start
+Step 2Input first name into first[].
+Step 3: Input last name into last[].
+Step 4: Initialize variables:
+  o i=0,j=0,length= 0.
+Step 5: Copycharacters of first[] into full[], incrementing length.
+Step 6: Insert a space character into full[length]. Increment length.
+Step 7: Copycharacters of last[] into full[], incrementing length
+Step 8: Insert '\0' at the end of full[].
+Step 9: Print the full name and its length.
+Step 10: If length > 20 → Print "Name too longfor screen."
+Step 11: Else → Print "Name fitsthe screen."
+Step 12: Stop
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+    char first[50], last[50], full[100];
+    int i = 0, j = 0, length = 0;
+    clrscr();
+    printf("Enter first name: ");
+    scanf("%s", first);
+    printf("Enter last name: ");
+    scanf("%s", last);
+    // Copy first name
+    while(first[i] != '\0')
+    {
+        full[length++] = first[i++];
+    }
+    // Add space
+    full[length++] = ' ';
+    // Copy last name
+    while(last[j] != '\0')
+    {
+        full[length++] = last[j++];
+    }
+    // Terminatestring
+    full[length] = '\0';
+    // Output
+    printf("Full Name: %s\n", full);
+    printf("Length: %d\n", length);
+    if(length > 20)
+        printf("Name too long for screen.\n");
+    else
+        printf("Name fits the screen.\n");
+    getch();
+    return 0;
+}
