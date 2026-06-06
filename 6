@@ -1,0 +1,32 @@
+Program– 06: Keyword search in course description
+
+Algorithm:
+Step 1: [Start]
+Step 2: Input the course description (string)
+Step 3: Input the keyword to search
+Step 4: Use the strstr() function to check if the keyword exists in the course description
+    If strstr() returns a non-NULL pointer → Keyword found
+    Else → Keyword not found
+Step 5:Displayappropriate message
+Step 6: [Stop]
+
+CSource Code:
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#define MAX 100
+void main()
+{
+    char description[MAX];
+    char keyword[100];
+    clrscr();
+    printf("Enter the course description:\n");
+    fgets(description,MAX,stdin);
+    printf("Enter the keyword to search: ");
+    scanf("%s", keyword);
+    if (strstr(description, keyword) )
+        printf("Keyword '%s' found in the %s course description.\n", keyword,description);
+    else
+        printf("Keyword '%s' not found in the %s course description.\n", keyword,description);
+    getch();
+}
