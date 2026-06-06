@@ -1,0 +1,43 @@
+Program– 05: Sine approximation (Series method)
+
+Algorithm:
+Step 1:Start
+Step 2: Input angle x in degrees
+Step 3: Convert degrees to radians:
+    x_rad = x * π/180
+Step 4: Initialize variables:
+    term = x_rad--
+    sum=0
+    sign = 1
+Step 5: Loop through nterms forthedesired accuracy
+    - Addcurrentterm * sign to sum
+    - Computenexttermusingformula:
+         term=term*x_rad*x_rad/((2*i)* (2*i+1))
+        -Flip sign for next term (sign =-sign)
+Step 6: Print final sum as approximate sin(x)
+Step 7: Stop
+
+CSource Code:
+#include <stdio.h>
+#include<math.h>
+#define PI 3.1415926535
+void main()
+{
+    float sum,term,x,nume;
+    int deg,i=2;
+    float fact=1;
+    clrscr();
+    printf("Enter angle in degrees: ");
+    scanf("%d", &deg); x=(deg*PI)/180;
+    sum=x; nume=x;
+    do
+    {
+        fact=fact*i*(i+1);
+        nume=-nume*x*x;
+        term = nume/fact;
+        sum += term;
+        i+=2;
+    } while (fabs(term)>=0.0001);
+    printf("Approximated sin(%d) = %.2f\n", deg, sum);
+    getch();
+}
